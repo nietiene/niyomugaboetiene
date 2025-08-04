@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 const cors = require("cors");
 require("dotenv").config();
 const path = require('path');
+import { fileURLToPath } from 'url';
 
 const app = express();
 app.use(cors());
@@ -36,13 +37,16 @@ app.post("/send", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(__dirname, '../my-portifolio/dist')));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// All other routes serve the index.html
+// Serve static files from frontend's dist folder
+app.use(express.static(path.join(__dirname, 'my-portifolio', 'dist')));
+
+// All other routes go to index.html (React routing)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../my-portifolio/dist/index.html'));
+  res.sendFile(path.join(__dirname, 'my-portifolio', 'dist', 'index.html'));
 });
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
