@@ -36,13 +36,13 @@ app.post("/send", async (req, res) => {
   }
 });
 
-// Serve React build folder
 app.use(express.static(path.join(__dirname, '../my-portifolio/dist')));
 
-// Catch-all to serve React for other routes
+// All other routes serve the index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../my-portifolio/dist/index.html'));
 });
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
