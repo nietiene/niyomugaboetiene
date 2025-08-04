@@ -1,29 +1,31 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const cors = require("cors");
-require("dotenv").config();
-const path = require('path');
-import { fileURLToPath } from 'url';
+import express from "express";
+import nodemailer from "nodemailer";
+import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+
+dotenv.config();
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-// Your email sending endpoint
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: process.env.EMAIL_USER,    
-      pass: process.env.APP_PASS   
-    }
+      user: process.env.EMAIL_USER,
+      pass: process.env.APP_PASS,
+    },
   });
 
   const mailOptions = {
     from: email,
-    to: process.env.EMAIL_USER,         // Receiver (your email)
+    to: process.env.EMAIL_USER,
     subject: `Message from ${name}`,
     text: message,
   };
@@ -40,13 +42,15 @@ app.post("/send", async (req, res) => {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from frontend's dist folder
-app.use(express.static(path.join(__dirname, 'my-portifolio', 'dist')));
+// Serve React build files
+app.use(express.static(path.join(__dirname, "my-portifolio", "dist")));
 
-// All other routes go to index.html (React routing)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'my-portifolio', 'dist', 'index.html'));
+// Serve index.html for all other routes (React Router)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "my-portifolio", "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
