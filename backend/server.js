@@ -9,9 +9,11 @@ dotenv.config();
 
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Email endpoint
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
 
@@ -39,17 +41,19 @@ app.post("/send", async (req, res) => {
   }
 });
 
+// Configure paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve React build files
-app.use(express.static(path.join(__dirname, "my-portifolio", "dist")));
+// Serve static files from React app (now in same directory)
+app.use(express.static(path.join(__dirname, "my-portifolio/dist")));
 
-// Serve index.html for all other routes (React Router)
+// Handle React routing, return all requests to React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "my-portifolio", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "my-portifolio/dist", "index.html"));
 });
 
+// Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

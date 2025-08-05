@@ -1,12 +1,12 @@
 {
   "name": "my-portifolio",
   "private": true,
-  "homepage": "./",
+  "homepage": "/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/",
     "lint": "eslint .",
     "preview": "vite preview"
   },
