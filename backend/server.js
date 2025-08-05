@@ -9,8 +9,11 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://niyomugaboetiene.onrender.com/', 
+  methods: ['POST', 'GET'],
+}));
+
 app.use(express.json());
 
 // Email endpoint
@@ -55,6 +58,7 @@ app.get("*", (req, res) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
