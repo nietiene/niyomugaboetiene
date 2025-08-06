@@ -24,10 +24,14 @@ const About = () => {
       className="min-h-screen w-full bg-gradient-to-b from-gray-900 via-black to-gray-900 text-gray-300 flex items-center justify-center px-4 md:px-16 py-20"
     >
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* normal div but enhanced with animations */}
         <motion.div
           className="flex-1"
+          // initial opacity: it start invisible and shifted to 40px to the left
           initial={{ opacity: 0, x: -40 }}
+          // when it scrool int view it become full visible and move to normal postition
           whileInView={{ opacity: 1, x: 0 }}
+          
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
