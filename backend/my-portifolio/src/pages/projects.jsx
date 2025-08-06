@@ -80,6 +80,7 @@ const Projects = () => {
             transition: {
                 // means animation will start one after another
                 staggerChildren: 0.1,
+                // start after 0.3 
                 delayChildren: 0.3
             },
         },
