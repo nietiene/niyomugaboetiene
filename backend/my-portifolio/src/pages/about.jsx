@@ -130,6 +130,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
+        // flex-1 flex this part make division take 50% of the screen
           className="flex-1 flex justify-center"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
