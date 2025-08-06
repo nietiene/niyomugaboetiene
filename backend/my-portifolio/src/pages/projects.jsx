@@ -48,7 +48,7 @@ const Projects = () => {
         {
             title: "Portfolio Website",
             tech: [
-                { icon: <SiNextdotjs className="text-white" />, name: "Next.js"},
+                { icon: <SiReact className="text-cyan-400" />, name: "React.js"},
                 { icon: <SiTailwindcss className="text-cyan-300" />, name: "Tailwind"},
                 { icon: <SiTypescript className="text-blue-500" />, name: "TypeScript"},
             ],
@@ -61,7 +61,7 @@ const Projects = () => {
             title: "Library Management System",
             tech: [
                 {icon: <SiReact className="text-cyan-400"/>, name: "React"},
-                {icon: <SiNextdotjs className="text-green-500"/>, name: "Node.js"},
+                {icon: <SiNodedotjs className="text-green-500"/>, name: "Node.js"},
                 {icon: <SiMongodb className="text-green-500"/>, name: "MongoDb"},
             ],
             description:
