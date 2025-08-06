@@ -31,8 +31,9 @@ const About = () => {
           initial={{ opacity: 0, x: -40 }}
           // when it scrool int view it become full visible and move to normal postition
           whileInView={{ opacity: 1, x: 0 }}
-          
+          // animation run onve
           viewport={{ once: true }}
+          // animation take 0.8s to finish
           transition={{ duration: 0.8 }}
         >
           <motion.h2 
@@ -49,6 +50,7 @@ const About = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
+            // delay wait 0.4 before starting the animation
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <p className="text-lg leading-relaxed">
