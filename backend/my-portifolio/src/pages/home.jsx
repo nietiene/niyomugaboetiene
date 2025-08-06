@@ -15,6 +15,8 @@ const Home = () => {
     "Full Stack Specialist"
   ];
 
+  // runs every three seconds
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => 
@@ -26,16 +28,19 @@ const Home = () => {
   }, []);
 
   const textVariants = {
+    // when text is enter it starts as invisible 
     enter: { 
       opacity: 0, 
       y: 20,
       position: 'absolute'
     },
+    // when it arrive to center it will full visible
     center: { 
       opacity: 1, 
       y: 0,
       position: 'relative'
     },
+    // when it exit it will be full invisble
     exit: { 
       opacity: 0, 
       y: -20,
