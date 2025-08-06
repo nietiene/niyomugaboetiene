@@ -63,7 +63,7 @@ const Home = () => {
           </motion.h1>
 
           <div className="h-16 relative overflow-hidden">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait"> {/* enable animation when componet is enter and leave*/}
               <motion.h2
                 key={currentTextIndex}
                 className="text-2xl md:text-3xl font-semibold text-gray-300"
