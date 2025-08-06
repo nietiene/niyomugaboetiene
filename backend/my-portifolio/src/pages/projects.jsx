@@ -72,10 +72,13 @@ const Projects = () => {
     ];
 
     const containerVariants = {
+        // it start full invisible
         hidden: { opacity: 0 },
         visible: {
+            // 
             opacity: 1,
             transition: {
+                // means animation will start one after another
                 staggerChildren: 0.1,
                 delayChildren: 0.3
             },
