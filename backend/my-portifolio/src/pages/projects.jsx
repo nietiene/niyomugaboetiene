@@ -35,7 +35,7 @@ const Projects = () => {
         {
             title: "Student Managment System",
             tech: [
-                {icon: <SiPhp className="text-green-500"/>, name: "PHP"},
+                {icon: <SiPhp className="text-purple-500"/>, name: "PHP"},
                 {icon: <SiTailwindcss className="text-cyan-400"/>, name: "Tailwindcss"},
                 {icon: <FaDatabase className="text-green-600"/>, name: "MySQL"},
             ],

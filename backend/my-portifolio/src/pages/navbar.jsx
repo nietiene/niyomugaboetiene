@@ -116,7 +116,7 @@ const NavBar = () => {
                 <NavLink
                   key={item.target}
                   to={item.target}
-                  className={({ isActive}) => 
+                  className={({ isActive }) => 
                     `flex items-center gap-4 px-4 py-3 rounded-lg text-lg font-medium ${
                       isActive 
                       ? "text-cyan-400 bg-gray-800/50"
