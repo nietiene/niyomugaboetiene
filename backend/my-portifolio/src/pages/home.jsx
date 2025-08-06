@@ -6,6 +6,7 @@ import avatar from "../assets/avatar.gif"
 
 const Home = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
+
   const texts = [
     "Web Developer",
     "React Expert",
@@ -17,6 +18,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => 
+        // this code makes the text circle if the prev index is equal to last index it goes to index 0 else take last index and add it to one
         prevIndex === texts.length - 1 ? 0 : prevIndex + 1
       );
     }, 3000);
