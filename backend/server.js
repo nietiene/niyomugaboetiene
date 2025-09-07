@@ -48,7 +48,29 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "my-portifolio/dist")));
-app.use(express.static(path.join(__dirname, "public")));
+import { SitemapStream, streamToPromise } from "sitemap";
+import { Readable } from "stream";
+
+// Generate sitemap dynamically
+app.get("/sitemap.xml", async (req, res) => {
+  try {
+    const links = [
+      { url: "/", changefreq: "daily", priority: 1.0 },
+      { url: "/about", changefreq: "monthly", priority: 0.8 },
+      { url: "/contact", changefreq: "monthly", priority: 0.8 },
+      // Add other React routes here
+    ];
+
+    const stream = new SitemapStream({ hostname: "https://niyomugaboetiene.onrender.com" });
+    const xml = await streamToPromise(Readable.from(links).pipe(stream));
+
+    res.header("Content-Type", "application/xml");
+    res.send(xml.toString());
+  } catch (err) {
+    console.error(err);
+    res.status(500).end();
+  }
+});
 
 
 app.get("*", (req, res) => {
