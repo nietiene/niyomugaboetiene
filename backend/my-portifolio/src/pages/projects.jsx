@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, stagger } from "framer-motion";
-import { FaGithub, FaDatabase } from "react-icons/fa";
+import { FaGithub, FaDatabase, } from "react-icons/fa";
 import {
     SiNodedotjs,
     SiMongodb,
@@ -8,13 +8,17 @@ import {
     SiTypescript,
     SiNextdotjs,
     SiPhp,
-    SiReact
+    SiReact,
+    SiEthers,
+    SiSolidity,
 
 } from "react-icons/si"
 
 import studentIllustration from "../assets/student.png"
 import chatAppIllustration from "../assets/chat-app.png"
 import libraryAppIllustration from "../assets/library-managment.png"
+import transaction from "../assets/transaction.gif"
+import netmovies from "../assets/logo.png"
 
 import myPortfolio from "../assets/portfolio.png"
 
@@ -31,6 +35,19 @@ const Projects = () => {
             "A socket.io based chat application with real-tie messaging, user authentication and message history.",
             illustration: chatAppIllustration,
             code: "https://github.com/nietiene/Chat-app-frontend"
+        },
+        { 
+            title: "Krypto-site-3.0 App",
+            tech: [
+                { icon: <SiReact className="text-cyan-400" />, name: "React"},
+                { icon: < SiEthers className="text-green-500" />, name: "ethers"},
+                { icon: < SiTypescript className="text-blue-500" />, name: "Typescript"},
+                { icon: <SiSolidity className="text-black" />, name: "soldity"},
+            ],
+            description: 
+            "Simple modern decentralized app which enable sending token across the world",
+            illustration: transaction,
+            code: "https://krypto-site-3-0.vercel.app"
         },
         {
             title: "Student Managment System",
@@ -68,6 +85,18 @@ const Projects = () => {
             "Full-stack Library management application with mananging student functionality and Role based access control",
             illustration: libraryAppIllustration,
             code: "https://github.com/nietiene/Library-Management-System"
+        },
+        {
+            title: "Netmoviess",
+            tech: [
+                {icon: <SiReact className="text-cyan-400"/>, name: "React"},
+                {icon: <SiNodedotjs className="text-green-500"/>, name: "Node.js"},
+                {icon: <SiTailwindcss className="text-cyan-500"/>, name: "Tailwindcss"},
+            ],
+            description:
+            "A modern Web app which allows you to watch full movie online ",
+            illustration: netmovies,
+            code: "https://netmoviess.vercel.app"
         },
     ];
 
