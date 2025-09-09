@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa"
 import {
   SiTailwindcss, SiExpress, SiFlask, SiDjango, SiMongodb,
-  SiPostman, SiVercel, SiSocketdotio, SiJavascript, SiLaravel
+  SiPostman, SiVercel, SiSocketdotio, SiJavascript, SiLaravel, SiSolidity, SiEthers, SiRemix
 } from "react-icons/si"
 
 import skillsAnimation from "../assets/skillss.gif"
@@ -50,6 +50,7 @@ const Skills = () => {
                 { icon: <FaJs className="text-yellow-400"/>, name: "JavaScript"},
                 { icon: <FaReact className="text-cyan-400"/>, name: "React"},
                 { icon: <FaBootstrap className="text-purple-500"/>, name: "Bootstrap"},
+                { icon: <SiEthers className="text-green-300"/>, name: "Ethers"},
                 { icon: <SiTailwindcss className="text-cyan-300"/>, name: "Tailwind"},
             ]
         },
@@ -62,7 +63,8 @@ const Skills = () => {
                 { icon: <FaPython className="text-blue-400"/>, name:"Python"},
                 { icon: <SiDjango className="text-emerald-800" />, name:"Django"},
                 { icon: <FaPhp className="text-indigo-500" />,  name:"PHP"},
-                { icon: <SiLaravel className="text-red-600"/>, name: "Laravel"}
+                { icon: <SiLaravel className="text-red-600"/>, name: "Laravel"},
+                { icon: <SiSolidity className="text-blue-500"/>, name: "Solidity"},
             ]
         },
         {
@@ -79,6 +81,7 @@ const Skills = () => {
                 { icon: <FaGithub className="text-white"/>, name: "GitHub"},
                 { icon: <VSCodeIcon className="text-blue-500"/>, name: "VS Code"},
                 { icon: <SiPostman className="text-orange-400"/>, name: "Postman"},
+                { icon: <SiRemix className="text-cyan-500"/>, name: "Remix IDE"},
                 { icon: <FaFigma className="text-purple-400"/>, name: "Figma"},
             ]
         },
