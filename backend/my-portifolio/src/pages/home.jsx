@@ -89,8 +89,8 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            I create beautiful, responsive websites with modern technologies like React, 
-            Tailwind CSS, and Node.js. Passionate about crafting exceptional user experiences.
+            I create beautiful, Modern Decentrized Application, Decentralzied Exchange, and responsive websites with modern technologies like React, 
+            Tailwind CSS, and Node.js, Solidity. Passionate about crafting exceptional user experiences.
           </motion.p>
 
           <div className="flex flex-wrap gap-4 pt-4">

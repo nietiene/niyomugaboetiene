@@ -2,12 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
-import { SiFlask, SiMongodb, SiTypescript, SiNextdotjs } from "react-icons/si";
+import { SiFlask, SiMongodb, SiTypescript, SiNextdotjs, SiSolidity, SiEthers } from "react-icons/si";
 
 import aboutAnimation from "../assets/about.gif"
 const About = () => {
 
   const techStack = [
+    { icon: <SiSolidity className="text-blue-500" />, name: "Solidity" },
+    { icon: <SiEthers className="text-green-400" />, name: "Ethers" },
     { icon: <FaReact className="text-cyan-400" />, name: "React.js" },
     { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
     { icon: <FaPython className="text-blue-400" />, name: "Python" },
@@ -15,7 +17,7 @@ const About = () => {
     { icon: <FaDatabase className="text-amber-500" />, name: "MySQL" },
     { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
     { icon: <SiTypescript className="text-blue-600" />, name: "TypeScript" },
-    { icon: <SiNextdotjs className="text-white" />, name: "Next.js" }
+    { icon: <SiNextdotjs className="text-white" />, name: "Next.js" },
   ];
 
   return (
@@ -54,7 +56,8 @@ const About = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <p className="text-lg leading-relaxed">
-              I'm <span className="font-semibold text-cyan-400">Etiene Niyomugabo</span>, a passionate full stack developer with a strong desire to build clean, user-friendly, and impactful digital experiences. What began as curiosity has envolved into a dedicated career path.
+              I'm <span className="font-semibold text-cyan-400">Etiene Niyomugabo</span>, a passionate <span className="text-cyan-400 font-bold"> Blockchain Developer, </span> 
+              <span className="font-bold text-cyan-400">Smart contract Developer, </span> <span className="font-bold text-cyan-400">Machine Learning and Deep learning Developer,</span>  full stack developer with a strong desire to build clean, user-friendly, and impactful digital experiences. What began as curiosity has envolved into a dedicated career path.
             </p>
 
             <p className="text-lg leading-relaxed">
