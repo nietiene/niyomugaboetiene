@@ -8,6 +8,11 @@ const Home = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const texts = [
+    "Web 3.0 Developer",
+    "Smart Contract Developer",
+     "Blockchain Developer",    
+    "Machine Learning and Deep learning Developer",
+    "Relation Database Developer",
     "Web Developer",
     "React Expert",
     "UI/UX Enthusiast",
@@ -63,7 +68,7 @@ const Home = () => {
           </motion.h1>
 
           <div className="h-16 relative overflow-hidden">
-            <AnimatePresence mode="wait"> {/* enable animation when componet is enter and leave*/}
+            <AnimatePresence mode="wait"> 
               <motion.h2
                 key={currentTextIndex}
                 className="text-2xl md:text-3xl font-semibold text-gray-300"

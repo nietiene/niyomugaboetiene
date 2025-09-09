@@ -49,7 +49,6 @@ const NavBar = () => {
             </span>
           </motion.div>
 
-          {/* Desktop nav items */}
           <div className="hidden md:flex items-center gap-4">
             {navItems.map((item) => (
               <NavLink
